@@ -15,7 +15,11 @@ const BootcampSchema = new mongoose.Schema({
         maxlength: [500, 'Name can not be more than 500 characters']
     },
     website: {
-        match: [/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/, 'Please use a valid URL with HTTP or HTTPS']
+      type: String,
+      match: [
+        /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/,
+        'Please use a valid URL with HTTP or HTTPS'
+      ]
     },
     phone: {
         type: String,
